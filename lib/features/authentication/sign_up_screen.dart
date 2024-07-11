@@ -15,15 +15,7 @@ class SignUpScreen extends ConsumerWidget {
   static const routeName = "signup";
   const SignUpScreen({super.key});
 
-  void _onCreateAccountTap(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const CreateAccountScreen(),
-      ),
-    );
-  }
-
-  void _onCreateAccountPressed(BuildContext context) {
+  void _onTapCreateAccount(BuildContext context) {
     context.pushNamed(CreateAccountScreen.routeName);
   }
 
@@ -65,7 +57,7 @@ class SignUpScreen extends ConsumerWidget {
                 Gaps.v60,
                 Gaps.v40,
                 GestureDetector(
-                  onTap: () => _onCreateAccountPressed(context),
+                  onTap: () => _onTapCreateAccount(context),
                   child: const AuthButton(
                     icon: FaIcon(FontAwesomeIcons.user),
                     text: "Use email & password",
